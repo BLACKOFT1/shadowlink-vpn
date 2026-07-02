@@ -122,7 +122,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@android:drawable/checkbox_on_background"
-            app:tint="@color/accent_blue_light
+            app:tint="@color/accent_blue_light"
             android:layout_marginEnd="8dp"
             android:visibility="gone" />
 
@@ -133,7 +133,7 @@
             android:layout_height="32dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@android:drawable/ic_menu_share"
-            app:tint="@color/text_secondary
+            app:tint="@color/text_secondary"
             android:layout_marginEnd="4dp" />
 
         <ImageButton
@@ -142,7 +142,7 @@
             android:layout_height="32dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@android:drawable/ic_menu_delete"
-            app:tint="#FF5252 />
+            app:tint="#FF5252" />
 
     </LinearLayout>
 
