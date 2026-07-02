@@ -36,9 +36,11 @@ object PinnedHttpClient {
         if (PANEL_PINS.isNotEmpty()) {
             val panelHost = extractHost(com.shadowlink.vpn.utils.PrefsManager.panelUrl)
             if (panelHost.isNotEmpty()) {
-                val pinner = CertificatePinner.Builder()
-                    .apply { PANEL_PINS.forEach { add(panelHost, it) } }
-                    .build()
+                val pinner = CertificatePinner.Builder().apply {
+                    PANEL_PINS.forEach { pin ->
+                        add(panelHost, pin)
+                    }
+                }.build()
                 builder.certificatePinner(pinner)
             }
         }
