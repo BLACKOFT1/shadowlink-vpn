@@ -8,6 +8,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.shadowlink.vpn.R
+import com.shadowlink.vpn.utils.PrefsManager
 import com.shadowlink.vpn.vpn.AppInfo
 import com.shadowlink.vpn.vpn.SplitTunnelManager
 import kotlinx.coroutines.*

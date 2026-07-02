@@ -1,7 +1,10 @@
 package com.shadowlink.vpn.utils
 
+import android.content.Context
 import com.shadowlink.vpn.network.PinnedHttpClient
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.Request
 import org.json.JSONObject
@@ -120,7 +123,7 @@ object NtpTimeValidator {
         // Re-sync automatique si trop vieux
         if (System.currentTimeMillis() - lastSyncAt > SYNC_INTERVAL_MS) {
             // Sync asynchrone en arrière-plan — ne bloque pas l'appel
-            kotlinx.coroutines.GlobalScope.launch(Dispatchers.IO) {
+            GlobalScope.launch(Dispatchers.IO) {
                 runCatching { syncServerTime() }
             }
         }
