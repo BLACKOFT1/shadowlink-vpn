@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace "com.shadowlink.vpn"
     compileSdk 34
 
     defaultConfig {
@@ -13,8 +14,7 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.0.0"
-        multiDexEnabled true
-    }
+        multiDexEnabled true    }
 
     buildTypes {
         release {
