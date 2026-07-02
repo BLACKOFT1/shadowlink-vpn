@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/logsHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/bg_secondary"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="JOURNAUX / LOGS"
+            android:textColor="@color/accent_blue_light"
+            android:textSize="12sp"
+            android:letterSpacing="0.12" />
+
+        <Button
+            android:id="@+id/btnCopyLogs"
+            style="@style/BtnSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Copier"
+            android:layout_marginEnd="8dp"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnClearLogs"
+            style="@style/BtnSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Effacer"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <!-- Logs scroll -->
+    <ScrollView
+        android:id="@+id/scrollLogs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/logsHeader"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#00E676"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:textIsSelectable="true"
+            android:text="[ShadowLink VPN] Prêt.\n" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

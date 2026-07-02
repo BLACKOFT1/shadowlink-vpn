@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connectez-vous avec votre compte ShadowLink pour synchroniser automatiquement vos profils VPN."
+        android:textColor="#8B9CC8"
+        android:textSize="12sp"
+        android:lineSpacingMultiplier="1.4"
+        android:layout_marginBottom="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOM D'UTILISATEUR"
+        android:textColor="#3B8AFF"
+        android:textSize="10sp"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="6dp" />
+
+    <EditText
+        android:id="@+id/etAccountUser"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_input"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#4A5678"
+        android:hint="Nom d'utilisateur"
+        android:inputType="text"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:layout_marginBottom="14dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MOT DE PASSE"
+        android:textColor="#3B8AFF"
+        android:textSize="10sp"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="6dp" />
+
+    <EditText
+        android:id="@+id/etAccountPass"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_input"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#4A5678"
+        android:hint="Mot de passe"
+        android:inputType="textPassword"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp" />
+
+</LinearLayout>

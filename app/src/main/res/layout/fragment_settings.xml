@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+
+        <!-- CONNEXION -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="RÉGLAGES DE CONNEXION" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="DNS PAR DÉFAUT" android:textColor="@color/accent_blue_light"
+                    android:textSize="11sp" android:layout_marginBottom="6dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="14dp">
+                    <EditText android:id="@+id/etDns" android:layout_width="0dp" android:layout_height="48dp"
+                        android:layout_weight="1" android:background="@drawable/bg_input"
+                        android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                        android:hint="1.1.1.1" android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="textUri" android:layout_marginEnd="8dp"/>
+                    <Button android:id="@+id/btnSaveDns" style="@style/BtnPrimary"
+                        android:layout_width="wrap_content" android:layout_height="48dp"
+                        android:text="OK" android:textSize="13sp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginBottom="14dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="MTU DU TUNNEL" android:textColor="@color/accent_blue_light"
+                    android:textSize="11sp" android:layout_marginBottom="6dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="14dp">
+                    <EditText android:id="@+id/etMtu" android:layout_width="0dp" android:layout_height="48dp"
+                        android:layout_weight="1" android:background="@drawable/bg_input"
+                        android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                        android:hint="1500" android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="number" android:layout_marginEnd="8dp"/>
+                    <Button android:id="@+id/btnSaveMtu" style="@style/BtnPrimary"
+                        android:layout_width="wrap_content" android:layout_height="48dp"
+                        android:text="OK" android:textSize="13sp"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginBottom="14dp"/>
+
+                <!-- Hotspot -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                    <androidx.appcompat.widget.AppCompatCheckBox android:id="@+id/switchHotspot"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:buttonTint="@color/accent_blue" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="PARTAGER LA CONNEXION VPN (HOTSPOT)"
+                        android:textColor="@color/text_primary" android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <!-- Auto-connect -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                    <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchAutoConnect"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:thumbTint="@color/accent_blue_light" android:trackTint="@color/divider"
+                        android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="RECONNEXION AUTOMATIQUE AU DÉMARRAGE"
+                        android:textColor="@color/text_primary" android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SÉCURITÉ VPN -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="SÉCURITÉ VPN" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+
+                <!-- Kill Switch -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="6dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="KILL SWITCH" android:textColor="@color/text_primary"
+                            android:textSize="13sp" android:fontFamily="sans-serif-medium"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Bloque tout si le VPN se coupe"
+                            android:textColor="@color/text_secondary" android:textSize="11sp"/>
+                    </LinearLayout>
+                    <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchKillSwitch"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:thumbTint="#FF5252" android:trackTint="@color/divider"/>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginTop="10dp" android:layout_marginBottom="12dp"/>
+
+                <!-- Split Tunnel -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="SPLIT TUNNEL" android:textColor="@color/text_primary"
+                            android:textSize="13sp" android:fontFamily="sans-serif-medium"/>
+                        <TextView android:id="@+id/tvSplitTunnelCount"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0 app(s) exclue(s)"
+                            android:textColor="@color/text_secondary" android:textSize="11sp"/>
+                    </LinearLayout>
+                    <Button android:id="@+id/btnSplitTunnel" style="@style/BtnSecondary"
+                        android:layout_width="wrap_content" android:layout_height="38dp"
+                        android:text="CONFIGURER" android:textSize="11sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- MOTEUR XRAY -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="MOTEUR POUR PROTOCOLES XRAY" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <Button android:id="@+id/btnXrayEngine" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:background="@drawable/bg_input"
+                    android:text="Xray-Core Subprocess (Stable)" android:textColor="@color/text_primary"
+                    android:textSize="13sp" android:gravity="start|center_vertical" android:paddingStart="14dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- MUX -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="MULTIPLEXAGE DE CONNEXION (MUX)" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <Button android:id="@+id/btnMuxType" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:background="@drawable/bg_input"
+                    android:text="h2mux (HTTP/2)" android:textColor="@color/text_primary"
+                    android:textSize="13sp" android:gravity="start|center_vertical"
+                    android:paddingStart="14dp" android:layout_marginBottom="14dp"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginBottom="14dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="CONCURRENCE MUX (STREAM MAX)" android:textColor="@color/accent_blue_light"
+                    android:textSize="11sp" android:layout_marginBottom="6dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="14dp">
+                    <EditText android:id="@+id/etMuxConcurrency" android:layout_width="0dp"
+                        android:layout_height="48dp" android:layout_weight="1"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="8"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="number" android:layout_marginEnd="8dp"/>
+                    <Button android:id="@+id/btnSaveMux" style="@style/BtnPrimary"
+                        android:layout_width="wrap_content" android:layout_height="48dp"
+                        android:text="OK" android:textSize="13sp"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginBottom="12dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <androidx.appcompat.widget.AppCompatCheckBox android:id="@+id/checkMuxPadding"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:buttonTint="@color/accent_blue" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ACTIVER LE PADDING MUX"
+                        android:textColor="@color/text_primary" android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- TCP -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="OPTIONS TCP" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="14dp">
+                    <androidx.appcompat.widget.AppCompatCheckBox android:id="@+id/checkTcpFastOpen"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:buttonTint="@color/accent_blue" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ACTIVER TCP FAST OPEN"
+                        android:textColor="@color/text_primary" android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginBottom="14dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <androidx.appcompat.widget.AppCompatCheckBox android:id="@+id/checkMultipathTcp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:buttonTint="@color/accent_blue" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ACTIVER MULTIPATH TCP"
+                        android:textColor="@color/text_primary" android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- THEME -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="APPARENCE" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <Button android:id="@+id/btnThemeMode" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:background="@drawable/bg_input"
+                    android:text="Sombre" android:textColor="@color/text_primary"
+                    android:textSize="13sp" android:gravity="start|center_vertical" android:paddingStart="14dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- LANGUE -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="LANGUE / LANGUAGE" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <Spinner android:id="@+id/spinnerLanguage" android:layout_width="match_parent"
+                    android:layout_height="48dp" android:background="@drawable/bg_input"
+                    android:entries="@array/languages" android:paddingStart="14dp"
+                    android:paddingEnd="14dp" android:popupBackground="@color/bg_card"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- HWID -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="CLÉ MATÉRIELLE (HWID)" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:id="@+id/tvHwid" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/text_secondary"
+                    android:textSize="11sp" android:fontFamily="monospace"
+                    android:textIsSelectable="true" android:layout_marginBottom="10dp"/>
+                <Button android:id="@+id/btnCopyHwid" style="@style/BtnSecondary"
+                    android:layout_width="wrap_content" android:layout_height="38dp"
+                    android:text="COPIER L'HWID" android:textSize="11sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- MISES À JOUR -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="MISES À JOUR" android:textColor="@color/accent_blue_light"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp" app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                <TextView android:id="@+id/tvAppVersion" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    android:textColor="@color/text_secondary" android:textSize="13sp" android:text="Version : --"/>
+                <Button android:id="@+id/btnCheckUpdate" style="@style/BtnPrimary"
+                    android:layout_width="wrap_content" android:layout_height="40dp"
+                    android:text="VÉRIFIER" android:textSize="12sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Logout / Login -->
+        <Button android:id="@+id/btnLogout" android:layout_width="match_parent"
+            android:layout_height="52dp" android:background="@drawable/bg_button_connect"
+            android:text="SE CONNECTER AU PANEL" android:textColor="@color/text_primary"
+            android:textSize="14sp" android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+</ScrollView>

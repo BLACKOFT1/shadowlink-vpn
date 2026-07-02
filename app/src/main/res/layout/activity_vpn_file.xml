@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ══ IMPORTER DEPUIS UN LIEN ══ -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="IMPORTER UN LIEN (vmess:// vless:// ss:// trojan://)"
+            android:textColor="@color/accent_blue_light" android:textSize="11sp"
+            android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="14dp">
+                <EditText android:id="@+id/etShareLink"
+                    android:layout_width="match_parent" android:layout_height="50dp"
+                    android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:hint="vmess:// / vless:// / ss:// / trojan://"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:inputType="textUri" android:layout_marginBottom="10dp"/>
+                <Button android:id="@+id/btnImportLink" style="@style/BtnSecondary"
+                    android:layout_width="wrap_content" android:layout_height="40dp"
+                    android:text="IMPORTER CE LIEN" android:textSize="12sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ══ CRÉER UNE CONFIGURATION ══ -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="CRÉER UNE CONFIGURATION"
+            android:textColor="@color/accent_blue_light" android:textSize="11sp"
+            android:letterSpacing="0.1" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+
+                <!-- Nom du profil -->
+                <EditText android:id="@+id/etProfileName"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_card_accent"
+                    android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                    android:hint="Nom du profil"
+                    android:paddingStart="16dp" android:paddingEnd="16dp"
+                    android:inputType="text" android:textSize="14sp"
+                    android:layout_marginBottom="14dp"/>
+
+                <!-- Catégorie de Protocole -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Catégorie de Protocole"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_marginBottom="6dp"/>
+                <Spinner android:id="@+id/spinnerCategory"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:popupBackground="@color/bg_card_elevated"
+                    android:layout_marginBottom="14dp"/>
+
+                <!-- Type / Mode -->
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Type / Mode"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_marginBottom="6dp"/>
+                <Spinner android:id="@+id/spinnerMode"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:popupBackground="@color/bg_card_elevated"
+                    android:layout_marginBottom="14dp"/>
+
+                <!-- Hôte + Port -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="10dp">
+                    <EditText android:id="@+id/etHost"
+                        android:layout_width="0dp" android:layout_height="52dp"
+                        android:layout_weight="2" android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_input"
+                        android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                        android:hint="Hôte / IP Serveur"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="textUri"/>
+                    <EditText android:id="@+id/etPort"
+                        android:layout_width="0dp" android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_input"
+                        android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                        android:hint="Port"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="number"/>
+                </LinearLayout>
+
+                <!-- Pays -->
+                <EditText android:id="@+id/etCountry"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/bg_input"
+                    android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                    android:hint="Pays (ex: FR, US, BR)"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:inputType="textCapCharacters" android:maxLength="2"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ══ CHAMPS SSH ══ -->
+        <LinearLayout android:id="@+id/layoutSshFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <EditText android:id="@+id/etSshUser"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Utilisateur"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="text" android:layout_marginBottom="10dp"/>
+                    <EditText android:id="@+id/etSshPass"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Mot de passe"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="textPassword"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ CHAMPS PROXY ══ -->
+        <LinearLayout android:id="@+id/layoutProxyFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="14dp">
+                    <EditText android:id="@+id/etProxyHost"
+                        android:layout_width="0dp" android:layout_height="52dp"
+                        android:layout_weight="2" android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Hôte Proxy"
+                        android:paddingStart="14dp" android:paddingEnd="14dp" android:inputType="textUri"/>
+                    <EditText android:id="@+id/etProxyPort"
+                        android:layout_width="0dp" android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="8080"
+                        android:paddingStart="14dp" android:paddingEnd="14dp" android:inputType="number"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ CHAMPS SSL ══ -->
+        <LinearLayout android:id="@+id/layoutSslFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PORT SSL" android:textColor="@color/accent_blue_light"
+                        android:textSize="11sp" android:layout_marginBottom="6dp"/>
+                    <EditText android:id="@+id/etSslPort"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="443"
+                        android:paddingStart="14dp" android:paddingEnd="14dp" android:inputType="number"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ PAYLOAD ══ -->
+        <LinearLayout android:id="@+id/layoutPayloadField"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="PAYLOAD HTTP" android:textColor="@color/accent_blue_light"
+                        android:textSize="11sp" android:layout_marginBottom="6dp"/>
+                    <EditText android:id="@+id/etPayload"
+                        android:layout_width="match_parent" android:layout_height="80dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:hint="GET / HTTP/1.1[crlf]Host: [host][crlf][crlf]"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="textMultiLine" android:gravity="top"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ CHAMPS V2RAY ══ -->
+        <LinearLayout android:id="@+id/layoutV2rayFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <EditText android:id="@+id/etV2rayUuid"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:hint="UUID / Password"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="text" android:fontFamily="monospace"
+                        android:layout_marginBottom="10dp"/>
+                    <Spinner android:id="@+id/spinnerV2rayNetwork"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input"
+                        android:entries="@array/v2ray_networks"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:popupBackground="@color/bg_card_elevated"
+                        android:layout_marginBottom="10dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="TLS"
+                            android:textColor="@color/text_primary" android:textSize="13sp"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchV2rayTls"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:thumbTint="@color/accent_blue_light" android:trackTint="@color/divider"/>
+                    </LinearLayout>
+                    <EditText android:id="@+id/etV2raySni"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="SNI (ex: example.com)"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="textUri" android:layout_marginBottom="10dp"/>
+                    <EditText android:id="@+id/etV2rayPath"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Path (ex: /ws)"
+                        android:paddingStart="14dp" android:paddingEnd="14dp" android:inputType="text"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ REALITY ══ -->
+        <LinearLayout android:id="@+id/layoutRealityFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="REALITY PUBLIC KEY" android:textColor="@color/accent_blue_light"
+                        android:textSize="11sp" android:layout_marginBottom="6dp"/>
+                    <EditText android:id="@+id/etRealityPublicKey"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Public Key"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="text" android:fontFamily="monospace"
+                        android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="SHORT ID" android:textColor="@color/accent_blue_light"
+                        android:textSize="11sp" android:layout_marginBottom="6dp"/>
+                    <EditText android:id="@+id/etRealityShortId"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Short ID"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="text" android:fontFamily="monospace"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ SHADOWSOCKS ══ -->
+        <LinearLayout android:id="@+id/layoutSsFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <Spinner android:id="@+id/spinnerSsMethod"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input"
+                        android:entries="@array/ss_methods"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:popupBackground="@color/bg_card_elevated"
+                        android:layout_marginBottom="10dp"/>
+                    <EditText android:id="@+id/etSsPassword"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Mot de passe SS"
+                        android:paddingStart="14dp" android:paddingEnd="14dp" android:inputType="textPassword"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ WIREGUARD ══ -->
+        <LinearLayout android:id="@+id/layoutWgFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <EditText android:id="@+id/etWgPrivateKey"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Private Key"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="textPassword" android:fontFamily="monospace"
+                        android:layout_marginBottom="10dp"/>
+                    <EditText android:id="@+id/etWgPublicKey"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Public Key (Peer)"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="text" android:fontFamily="monospace"
+                        android:layout_marginBottom="10dp"/>
+                    <EditText android:id="@+id/etWgAddress"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Adresse (ex: 10.0.0.2/32)"
+                        android:paddingStart="14dp" android:paddingEnd="14dp" android:inputType="textUri"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ UDP / HYSTERIA ══ -->
+        <LinearLayout android:id="@+id/layoutUdpFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <EditText android:id="@+id/etUdpAuth"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Authentification / Password"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="textPassword" android:layout_marginBottom="10dp"/>
+                    <EditText android:id="@+id/etUdpObfs"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Obfuscation (OBFS) — optionnel"
+                        android:paddingStart="14dp" android:paddingEnd="14dp" android:inputType="text"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ SLOWDNS ══ -->
+        <LinearLayout android:id="@+id/layoutSlowdnsFields"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <EditText android:id="@+id/etSlowdnsNs"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Nameserver (NS)"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="textUri" android:layout_marginBottom="10dp"/>
+                    <EditText android:id="@+id/etSlowdnsKey"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Clé de chiffrement"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="text" android:fontFamily="monospace"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ PROXY SIMPLE ══ -->
+        <LinearLayout android:id="@+id/layoutProxySimple"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/bg_card" app:cardCornerRadius="16dp" app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+                    <EditText android:id="@+id/etProxyUsername"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Utilisateur (optionnel)"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:inputType="text" android:layout_marginBottom="10dp"/>
+                    <EditText android:id="@+id/etProxyPassword"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_input" android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint" android:hint="Mot de passe (optionnel)"
+                        android:paddingStart="14dp" android:paddingEnd="14dp" android:inputType="textPassword"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ══ BOUTONS ANNULER / ENREGISTRER ══ -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="8dp" android:layout_marginBottom="24dp">
+            <Button android:id="@+id/btnCancel" style="@style/BtnSecondary"
+                android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="1" android:layout_marginEnd="12dp"
+                android:text="ANNULER" android:textSize="14sp"/>
+            <Button android:id="@+id/btnSave" style="@style/BtnPrimary"
+                android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="2" android:text="ENREGISTRER" android:textSize="14sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

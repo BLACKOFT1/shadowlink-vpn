@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ShadowLink VPN Pro</string>
+
+    <!-- Auth -->
+    <string name="login_title">Connexion / Sign In</string>
+    <string name="username_hint">Nom d\'utilisateur / Username</string>
+    <string name="password_hint">Mot de passe / Password</string>
+    <string name="login_button">SE CONNECTER / SIGN IN</string>
+    <string name="contact_admin">Pas de compte ? Contacter l\'admin</string>
+    <string name="error_username_required">Nom d\'utilisateur requis</string>
+    <string name="error_password_required">Mot de passe requis</string>
+    <string name="error_login_failed">Identifiants incorrects</string>
+    <string name="error_network">Erreur réseau. Vérifiez votre connexion.</string>
+
+    <!-- Home -->
+    <string name="connect">CONNECTER</string>
+    <string name="disconnect">DÉCONNECTER</string>
+    <string name="connecting">CONNEXION…</string>
+    <string name="disconnecting">DÉCONNEXION…</string>
+    <string name="status_connected">Connecté / Connected</string>
+    <string name="status_connecting">Connexion en cours…</string>
+    <string name="status_disconnected">Déconnecté / Disconnected</string>
+    <string name="status_disconnecting">Déconnexion…</string>
+    <string name="status_error">Erreur de connexion</string>
+    <string name="select_server">Choisir un serveur</string>
+    <string name="no_profiles">Aucun profil. Allez dans Profils.</string>
+    <string name="vpn_permission_denied">Permission VPN refusée</string>
+    <string name="account_inactive">Compte inactif. Contactez l\'admin.</string>
+
+    <!-- Stats -->
+    <string name="upload">Upload</string>
+    <string name="download">Download</string>
+    <string name="duration">Durée</string>
+    <string name="ping">Ping</string>
+    <string name="expires_at">Expire : %s</string>
+    <string name="data_usage">%s / %s utilisés</string>
+    <string name="free_time_left">⏱ Temps gratuit restant : %d min</string>
+
+    <!-- Rewarded Ads -->
+    <string name="watch_ad_for_vpn">▶ Regarder une pub → 1h gratuite</string>
+    <string name="ad_not_ready">Pub en chargement, réessayez.</string>
+    <string name="ad_loading">Chargement de la pub…</string>
+    <string name="reward_granted">✅ +%d min de VPN gratuit accordées !</string>
+
+    <!-- Profiles -->
+    <string name="profiles_title">Profils VPN</string>
+    <string name="sync_profiles">Synchroniser</string>
+    <string name="import_profile">Importer</string>
+    <string name="export_profiles">Exporter</string>
+    <string name="add_profile">Ajouter un profil</string>
+    <string name="profile_added">Profil ajouté</string>
+    <string name="profile_selected">Profil sélectionné : %s</string>
+    <string name="cannot_delete_server_profile">Ce profil vient du serveur</string>
+    <string name="no_local_profiles">Aucun profil local à exporter</string>
+    <string name="sync_success">%d profil(s) synchronisé(s)</string>
+    <string name="import_success">%d profil(s) importé(s)</string>
+    <string name="export_success">Profils exportés avec succès</string>
+    <string name="share_profile">Partager le profil</string>
+    <string name="no_profiles_empty">Aucun profil enregistré.\nSynchronisez ou ajoutez un profil.</string>
+
+    <!-- VPN File Form -->
+    <string name="profile_name_hint">Nom du profil</string>
+    <string name="host_hint">Hôte / Host</string>
+    <string name="port_hint">Port</string>
+    <string name="country_hint">Pays (ex: FR, US)</string>
+    <string name="ssh_user_hint">Utilisateur SSH</string>
+    <string name="ssh_pass_hint">Mot de passe SSH</string>
+    <string name="proxy_host_hint">Hôte du proxy</string>
+    <string name="proxy_port_hint">Port du proxy</string>
+    <string name="ssl_port_hint">Port SSL (défaut: 443)</string>
+    <string name="payload_hint">Payload HTTP</string>
+    <string name="uuid_hint">UUID</string>
+    <string name="sni_hint">SNI</string>
+    <string name="path_hint">Path (ex: /ws)</string>
+    <string name="slowdns_ns_hint">Nameserver (NS)</string>
+    <string name="slowdns_key_hint">Clé de chiffrement</string>
+    <string name="obfs_hint">Obfuscation (OBFS)</string>
+    <string name="auth_hint">Authentification</string>
+    <string name="ss_password_hint">Mot de passe SS</string>
+    <string name="import_from_link">Importer depuis un lien (vmess://, ss://…)</string>
+    <string name="enter_link">Entrez un lien de partage</string>
+    <string name="use_import_file">Utilisez Importer fichier pour les liens vmess://</string>
+    <string name="unsupported_link">Format de lien non supporté</string>
+    <string name="save">ENREGISTRER</string>
+    <string name="cancel">ANNULER</string>
+    <string name="field_required">Champ requis</string>
+    <string name="invalid_port">Port invalide</string>
+
+    <!-- Logs -->
+    <string name="logs_title">Journaux / Logs</string>
+    <string name="clear_logs">Effacer</string>
+    <string name="copy_logs">Copier</string>
+    <string name="logs_empty">Aucun log pour l\'instant</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Paramètres / Settings</string>
+    <string name="dns_label">DNS par défaut</string>
+    <string name="mtu_label">MTU du tunnel</string>
+    <string name="panel_url_label">URL du panel</string>
+    <string name="hwid_label">Clé matérielle (HWID)</string>
+    <string name="hwid_copied">HWID copié dans le presse-papier</string>
+    <string name="auto_connect_label">Reconnexion automatique au démarrage</string>
+    <string name="language_label">Langue / Language</string>
+    <string name="app_version">Version : %s</string>
+    <string name="check_update">Vérifier les mises à jour</string>
+    <string name="already_latest">Vous utilisez déjà la dernière version.</string>
+    <string name="saved">Sauvegardé ✓</string>
+    <string name="invalid_mtu">MTU invalide (576–9000)</string>
+    <string name="invalid_url">URL invalide (doit commencer par http)</string>
+    <string name="logout">Déconnexion</string>
+    <string name="logout_confirm">Voulez-vous vous déconnecter ?</string>
+
+    <!-- Updates -->
+    <string name="update_available">Mise à jour disponible</string>
+    <string name="version">Version</string>
+    <string name="update_now">METTRE À JOUR</string>
+    <string name="later">PLUS TARD</string>
+    <string name="downloading">Téléchargement en cours…</string>
+
+    <!-- General -->
+    <string name="exit_app">Quitter</string>
+    <string name="exit_confirm">Voulez-vous quitter l\'application ?</string>
+    <string name="yes">OUI</string>
+    <string name="no">NON</string>
+    <string name="admob_app_id">ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX</string>
+    <string name="ok">OK</string>
+    <string name="loading">Chargement…</string>
+
+    <!-- Mode invité -->
+    <string name="guest_mode">Mode invité</string>
+    <string name="guest_mode_sub">Configs locales uniquement — sans compte</string>
+    <string name="login_to_premium">SE CONNECTER AU PANEL PREMIUM</string>
+    <string name="my_account">MON COMPTE</string>
+    <string name="guest_no_premium">Connectez-vous pour accéder aux serveurs premium</string>
+
+
+    <!-- Kill Switch & Split Tunnel -->
+    <string name="kill_switch">Kill Switch</string>
+    <string name="kill_switch_desc">Bloque tout le trafic si le VPN se coupe</string>
+    <string name="split_tunnel">Split Tunnel</string>
+    <string name="split_tunnel_desc">Choisir les apps qui passent par le VPN</string>
+    <string name="configure">CONFIGURER</string>
+    <string name="security_vpn">SÉCURITÉ VPN</string>
+
+</resources>

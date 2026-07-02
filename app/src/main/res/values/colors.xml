@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette principale ShadowLink : Bleu foncé + Noir -->
+    <color name="bg_primary">#0A0E1A</color>
+    <color name="bg_secondary">#0F1629</color>
+    <color name="bg_card">#141C35</color>
+    <color name="bg_card_elevated">#1A2444</color>
+
+    <color name="accent_blue">#1E6FE8</color>
+    <color name="accent_blue_light">#3B8AFF</color>
+    <color name="accent_blue_dark">#1250B0</color>
+    <color name="accent_cyan">#00D4FF</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8B9CC8</color>
+    <color name="text_hint">#4A5678</color>
+
+    <color name="status_connected">#00E676</color>
+    <color name="status_connecting">#FFB300</color>
+    <color name="status_disconnected">#546E7A</color>
+    <color name="status_error">#FF5252</color>
+
+    <color name="premium_gold">#FFD700</color>
+    <color name="badge_local">#7C4DFF</color>
+
+    <color name="divider">#1E2A4A</color>
+    <color name="ripple">#1A3A7A</color>
+
+    <!-- Couleurs système -->
+    <color name="colorPrimary">#1E6FE8</color>
+    <color name="colorPrimaryDark">#0A0E1A</color>
+    <color name="colorAccent">#3B8AFF</color>
+</resources>
