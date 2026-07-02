@@ -1,7 +1,0 @@
-{
-  "NOTE": "Télécharge une animation Lottie gratuite depuis https://lottiefiles.com/search?q=vpn&category=animations",
-  "INSTRUCTION": "Renomme le fichier JSON téléchargé en 'vpn_connecting.json' et place-le ici dans res/raw/",
-  "SUGGESTION_1": "https://lottiefiles.com/animations/vpn-shield",
-  "SUGGESTION_2": "https://lottiefiles.com/animations/loading-circle",
-  "ALTERNATIVE": "Si tu ne veux pas de Lottie, retire le LottieAnimationView du fragment_home.xml et remplace-le par un simple ImageView avec l'icone VPN"
-}
